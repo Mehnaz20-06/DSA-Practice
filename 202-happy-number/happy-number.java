@@ -1,34 +1,23 @@
 class Solution {
     public boolean isHappy(int n) 
     {  
-        //Mehnaz Java Solution
-        //HashSet and dunction method
-        //Time complexity = O(log n)
-        //Space Complexity = O(log n) - usage of HashSet
-
         HashSet<Integer> seen = new HashSet<>();
-        while( n != 1)
+        while( n != 1 && !seen.contains(n))
         {
-            if(seen.contains(n))
-            {
-                return false; // we have detected infinite loop
-            }
-            else
-            {
-                seen.add(n);
-                n = getSum(n);
-            }
+            seen.add(n);
+            n = happyNum(n);
         }
-      return true;
+        return n == 1;
+
     }
-    public static int getSum(int num)
+    public static int happyNum(int n)
     {
         int sum = 0;
-        while(num > 0)
+        while( n > 0)
         {
-            int digit = num % 10;
+            int digit = n % 10;
             sum += digit * digit;
-            num /= 10;
+            n /= 10;
         }
         return sum;
     }
