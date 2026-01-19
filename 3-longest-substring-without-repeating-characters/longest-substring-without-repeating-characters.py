@@ -1,13 +1,13 @@
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
-        left = 0
-        maxlen = 0
         hashmap = {}
+        left = 0
+        maxLen = 0
         for right in range(len(s)):
             if s[right] in hashmap:
                 left = max(left,hashmap[s[right]] + 1)
             hashmap[s[right]] = right
             length = right - left + 1
-            maxlen = max(length,maxlen)
-        return maxlen
+            maxLen = max(length,maxLen)
+        return maxLen
        
