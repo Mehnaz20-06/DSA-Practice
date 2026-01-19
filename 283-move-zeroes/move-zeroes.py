@@ -5,10 +5,10 @@ class Solution(object):
             if nums[i] == 0:
                 continue
             if nums[i] != 0:
-                nums[k],nums[i] = nums[i] , nums[k]
-                k += 1 
+                nums[k] , nums[i] = nums[i] , nums[k]
+                k += 1
         return nums
-
+       
 
          
 
