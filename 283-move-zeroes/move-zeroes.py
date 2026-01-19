@@ -1,12 +1,20 @@
 class Solution(object):
     def moveZeroes(self, nums):
-        j = 0
-        for i in range(0,len(nums)):
+        k = 0
+        for i in range(len(nums)):
+            if nums[i] == 0:
+                continue
             if nums[i] != 0:
-                self.swap(nums,i,j)
-                j += 1
-        
-    def swap(self ,nums,i,j):
-        nums[i] , nums[j] = nums[j] , nums[i]
+                nums[k],nums[i] = nums[i] , nums[k]
+                k += 1 
+        return nums
+
+
+         
+
+                
+
+
+      
             
         
