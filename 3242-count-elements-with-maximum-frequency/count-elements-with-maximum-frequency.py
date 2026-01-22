@@ -1,20 +1,19 @@
 class Solution(object):
     def maxFrequencyElements(self, nums):
         freq = {}
-
-        # count frequency
         for x in nums:
-            freq[x] = freq.get(x, 0) + 1
+            freq[x] = freq.get(x , 0) + 1
+        count = 0
+        maxim = 0
+        for value in freq.values():
+            if value > maxim:
+                maxim = value
+        for value in freq.values():
+            if value == maxim:
+                count += value
+        return count
 
-        maxFreq = 0
-        total = 0
 
-        # iterate through frequencies
-        for count in freq.values():
-            if count > maxFreq:
-                maxFreq = count
-                total = count
-            elif count == maxFreq:
-                total += count
 
-        return total
+
+        
