@@ -1,12 +1,11 @@
 class Solution(object):
     def reverseVowels(self, s):
         #Strings are immutable
-        #We convert String to list
         s = list(s)
-        left = 0
         n = len(s)
-        right = n -1
-        vowels = ('aeiouAEIOU')
+        left = 0
+        right =  n - 1
+        vowels = ("aeiouAEIOU")
         while left < right:
             if s[left] not in vowels:
                 left += 1
@@ -17,11 +16,10 @@ class Solution(object):
                 left += 1
                 right -= 1
         return "".join(s)
-            
-            
 
 
 
+       
         """
         :type s: str
         :rtype: str
