@@ -1,8 +1,6 @@
 class Solution(object):
     def longestCommonPrefix(self, strs):
-        if not strs:
-            return ""
-        first = strs[0]
+        first= strs[0]
         n = len(first)
         prefix = []
         for i in range(n):
@@ -10,8 +8,11 @@ class Solution(object):
             for s in strs[1:]:
                 if i >= len(s) or s[i] != char:
                     return "".join(prefix)
-                
             prefix.append(char)
         return "".join(prefix)
-        
-        
+                    
+
+
+
+
+       
