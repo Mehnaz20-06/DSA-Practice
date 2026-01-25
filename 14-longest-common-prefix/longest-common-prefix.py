@@ -1,19 +1,17 @@
 class Solution(object):
     def longestCommonPrefix(self, strs):
-        #Mehnaz
-        #Solution using min and max
         if not strs:
             return ""
-        smallest = min(strs)
-        largest = max(strs)
-        for i in range(0,len(smallest)):
-            if smallest[i] != largest[i]:
-                return smallest[:i]
-        return smallest        
-
+        first = strs[0]
+        n = len(first)
+        prefix = []
+        for i in range(n):
+            char = first[i]
+            for s in strs[1:]:
+                if i >= len(s) or s[i] != char:
+                    return "".join(prefix)
+                
+            prefix.append(char)
+        return "".join(prefix)
         
-        """
-        :type strs: List[str]
-        :rtype: str
-        """
         
