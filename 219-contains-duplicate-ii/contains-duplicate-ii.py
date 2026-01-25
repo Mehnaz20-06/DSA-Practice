@@ -1,14 +1,19 @@
 class Solution(object):
     def containsNearbyDuplicate(self, nums, k):
-        #Mehnaz
-        hashmap = {}
-        for i , num in enumerate(nums):
-            if num in hashmap:
-                prevInd = hashmap[num]
-                if abs(i - prevInd) <= k:
+        seen = {}
+        n = len(nums)
+        for i in range(0,n):
+            if nums[i] in seen:
+                if i - seen[nums[i]] <= k:
                     return True
-            hashmap[num]= i
+            seen[nums[i]] = i
         return False
+
+        
+       
+        
+        
+        
        
         
         """
