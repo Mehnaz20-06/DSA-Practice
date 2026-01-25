@@ -1,7 +1,7 @@
 class Solution(object):
     def sortColors(self, arr):
         low = 0
-        mid = 0
+        mid  = 0
         n = len(arr)
         high = n - 1
         while mid <= high:
@@ -14,12 +14,7 @@ class Solution(object):
             else:
                 arr[mid],arr[high] = arr[high],arr[mid]
                 high -= 1
-        
+            
 
 
-
-        """
-        :type nums: List[int]
-        :rtype: None Do not return anything, modify nums in-place instead.
-        """
         
