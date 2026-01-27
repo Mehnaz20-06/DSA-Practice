@@ -1,17 +1,16 @@
 class Solution(object):
     def maxProfit(self, prices):
         bp = prices[0]
-        maxP = 0
-        for i in range(len(prices)):
+        maxProfit = 0
+        n = len(prices)
+        for i in range(0,n):
             if prices[i] < bp:
                 bp = prices[i]
             profit = prices[i] - bp
-            maxP = max(maxP,profit)
-        return maxP
-        
+            maxProfit = max(profit , maxProfit)
+        return maxProfit
         
 
-            
 
         
 
