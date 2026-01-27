@@ -2,8 +2,8 @@ class Solution(object):
     def isAnagram(self, s, t):
         if len(s) != len(t):
             return False
-        freq = [0]* 26
-        for i in range(0, len(s)):
+        freq = [0] * 26
+        for i in range(len(s)):
             freq[ord(s[i]) - ord("a")] += 1
             freq[ord(t[i]) - ord("a")] -= 1
         for x in freq:
@@ -11,10 +11,3 @@ class Solution(object):
                 return False
         return True
         
-            
-
-
-       
-        
-
-       
