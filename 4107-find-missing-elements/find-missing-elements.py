@@ -3,15 +3,11 @@ class Solution(object):
         nums_set = set(nums)
         low = min(nums)
         high = max(nums)
-        missing = []
-        for i in range(low+1,high):
-            if i not in nums_set:
-                missing.append(i)
-        return missing
-
-       
-            
-
+        res = []
+        for i in range(low,high+1):
+            if i not in nums:
+                res.append(i)
+        return res
         
                 
 
