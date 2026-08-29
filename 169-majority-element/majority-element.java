@@ -3,17 +3,24 @@ class Solution {
     {
         HashMap<Integer,Integer> map = new HashMap<>();
         int n = nums.length;
-        int majority = n/2;
-        for(int num : nums)
+        for(int i = 0; i < n ; i++)
         {
-            map.put(num,map.getOrDefault(num , 0)+1);
-        }
-        for(Map.Entry<Integer,Integer> entry :map.entrySet())
-        {
-            if(entry.getValue() > majority)
+            if(map.containsKey(nums[i]))
             {
-                return entry.getKey();
+                map.put(nums[i],map.get(nums[i])+1);
             }
+            else
+            {
+                map.put(nums[i],1);
+            }
+        }
+        for(int key : map.keySet())
+        {
+            if(map.get(key) > n/2)
+            {
+                 return key;
+            }
+            
         }
         return -1;
     }
